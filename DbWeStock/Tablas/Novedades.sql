@@ -4,5 +4,5 @@
 	[Descripcion] NVARCHAR(50) NOT NULL,
 	[IdAccion] INT NOT NULL,
 	[FechaNovedad] DATETIME NOT NULL,
-	CONSTRAINT [FK_Novedades_Accion] FOREIGN KEY ([IdAccion]) REFERENCES [dbo].[Novedades] ([IdAccion])
+	CONSTRAINT [FK_Novedades_Accion] FOREIGN KEY ([IdAccion]) REFERENCES [dbo].[Acciones] ([IdAccion])
 )
