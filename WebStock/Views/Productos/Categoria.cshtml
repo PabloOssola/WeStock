@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+<div class="containter">
+    <div class="row">
+        <form class="form-horizontal" name="commentform" method="post" action="/Categoria/Save">
+            <div class="col-xs-12">
+                <div class="col-xs-12 form-group">
+                    <label for="idTipoGasto">Tipo Gasto</label>
+                    <select name="idTipoGasto" class="form-control" id="idTipoGasto">
+                        <option value="1">Oligatorio</option>
+                        <option value="2">Deseoso</option>
+                        <option value="3">Inversión</option>
+                    </select>
+                </div> 
+                <div class="col-xs-12 form-group">
+                    <label for="Descripcion" class="control-label">Descripción</label>
+                    <textarea name="Descripcion" id="Descripcion" class="form-control" rows="5" required></textarea>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <button type="submit" class="btn btn-success" style="float: right;">
+                        Guardar
+                        <span class="fa fa-floppy-o"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

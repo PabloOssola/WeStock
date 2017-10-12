@@ -1,0 +1,166 @@
+﻿
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Listado de Stock Futuro</h1>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row"> 
+                <div class="col-lg-3 form-group">
+                    <label for="filtro-FechaDesde">Articulo</label>
+                    <input type="text" class="form-control" id="filtro-Articulo" />
+                </div>
+                <div class="col-lg-6 form-group">
+                    <label for="filtro-FechaDesde">Descripcion</label>
+                    <input type="text" class="form-control" id="filtro-Descripcion" />
+                </div>
+                <div class="col-lg-3 form-group">
+                    <label for="filtro-FechaHasta">Stock minimo</label>
+                    <input type="text" class="form-control" id="filtro-Stock" />
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Filtrar
+                    <span class="fa fa-search"></span>
+                </button>
+                <button type="reset" class="btn btn-danger">Limpar
+                    <span class="fa fa-eraser"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                            <th>Stock inicial</th>
+						    <th>InGecom</th>
+							<th>OutGecom</th>
+                            <th>InManual</th>
+                            <th>OutManual</th>
+                            <th>Stock final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+						    <td>M2-2/1E</td>
+                            <td>CONECTOR BIFILAR BIMETALICO</td>
+                            <td>0</td>
+                            <td>2100</td>
+							<td>0</td>
+                            <td>478</td>
+                            <td>0</td>
+                            <td>2578</td>
+                        </tr>         
+                        <tbody>
+						    <thead>
+                                <tr class="warning clickable" data-toggle="collapse" data-target="#group-of-rows-2" aria-expanded="false" aria-controls="group-of-rows-2">
+                                    <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+                                    <td>SEMANA</td>
+        							<td>OCC</td>
+                                    <td>OCP</td>  
+                                    <td>TOTAL</td>
+                                </tr>
+							</thead>
+                        </tbody>
+    					<tbody id="group-of-rows-2" class="collapse">
+                            <tr>
+    							<td></td>
+    							<td>Semana 1</td>
+                                <td>450</td>
+                                <td>50</td>  
+                                <td>2978</td>
+                            </tr>
+                            <tr>
+    							<td></td>
+    							<td>Semana 2</td>
+                                <td>1200</td>
+                                <td>175</td>  
+                                <td>4003</td>
+                            </tr>
+    						<tr>
+    							<td></td>
+    							<td>Semana 3</td>
+                                <td>1100</td>
+                                <td>45</td>  
+                                <td>5058</td>
+                            </tr>
+    						<tr>
+    							<td></td>
+    							<td>Semana 4</td>
+                                <td>550</td>
+                                <td>0</td>  
+                                <td>5608</td>
+                            </tr>
+                        </tbody>
+				        <tr>
+                            <td>M2-2/1E</td>
+                            <td>CONECTOR BIFILAR BIMETALICO</td>
+                            <td>0</td>
+                            <td>2100</td>
+                            <td>0</td>
+                            <td>478</td>
+                            <td>0</td>
+                            <td>2578</td>
+                        </tr> 
+    					<tbody>
+                            <tr class="warning clickable" data-toggle="collapse" data-target="#group-of-rows-2-1" aria-expanded="false" aria-controls="group-of-rows-2-1">
+                                <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+                                <td>SEMANA</td>
+                                <td>OCC</td>
+                                <td>OCP</td>  
+                                <td>TOTAL</td>
+                            </tr>
+                            <tbody id="group-of-rows-2-1" class="collapse">
+                                <tr>
+                                    <td></td>
+                                    <td>Semana 1</td>
+                                    <td>450</td>
+                                    <td>50</td>  
+                                    <td>2978</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Semana 2</td>
+                                    <td>1200</td>
+                                    <td>175</td>  
+                                    <td>4003</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Semana 3</td>
+                                    <td>1100</td>
+                                    <td>45</td>  
+                                    <td>5058</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Semana 4</td>
+                                    <td>550</td>
+                                    <td>0</td>  
+                                    <td>5608</td>
+                                </tr>
+                            </tbody>					        
+					    </tbody> 	
+					</tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+	
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>

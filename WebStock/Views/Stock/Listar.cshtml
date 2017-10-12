@@ -1,0 +1,113 @@
+﻿
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Listado de Stock Actual</h1>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row"> 
+                <div class="col-lg-3 form-group">
+                    <label for="filtro-FechaDesde">Articulo</label>
+                    <input type="text" class="form-control" id="filtro-Articulo" />
+                </div>
+                <div class="col-lg-6 form-group">
+                    <label for="filtro-FechaDesde">Descripcion</label>
+                    <input type="text" class="form-control" id="filtro-Descripcion" />
+                </div>
+                <div class="col-lg-3 form-group">
+                    <label for="filtro-FechaHasta">Stock minimo</label>
+                    <input type="text" class="form-control" id="filtro-Stock" />
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Filtrar
+                    <span class="fa fa-search"></span>
+                </button>
+                <button type="reset" class="btn btn-danger">Limpar
+                    <span class="fa fa-eraser"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <button id="addGasto" type="submit" class="btn btn-success btn-xs" data-toggle="modal" data-target="myModal" style="float: right; margin-bottom: 5px;">
+                    <span class="fa fa-plus"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                            <th>Stock</th>
+						    <th>Stock Minimo</th>
+						    <th>Ajuste</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+						    <td>M2-2/1E</td>
+                            <td>CONECTOR BIFILAR BIMETALICO</td>
+                            <td>100</td>
+                            <td>15</td>
+    						<td>
+                                <button id="editCategoria" type="submit" class="btn btn-warning btn-xs">
+                                    <span class="fa fa-pencil"></span>
+                                </button>
+							    <button id="deleteCategoria" type="submit" class="btn btn-danger btn-xs">
+                                    <span class="fa fa-trash"></span>
+                                </button>
+                            </td> 
+                        </tr>         
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="col-xs-12 form-group">
+                        <label for="Gasto" style="text-align:center">Ajuste</label>                        
+                        <button type="button"  id="close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modelContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#addGasto').on('click', function () {
+            var $modal = $('#modelContent');
+            $modal.load("@Url.Action("NuevoStock", "Stock")", function () {
+                $('#myModal').modal('show');
+         });
+        });
+        $('.close').on('click', function () {
+                $('#myModal').modal('hide')
+        });
+    });   
+</script>

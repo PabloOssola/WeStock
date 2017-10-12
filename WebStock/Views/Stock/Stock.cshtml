@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+<div class="containter">
+    <div class="row">
+        <form class="form-horizontal" name="commentform" method="post" action="/Gasto/Save">
+            <div class="col-xs-12">
+                <div class="col-xs-12 form-group">
+                    <label for="GrupoGasto">Tipo Grupo Gasto</label>
+                    <select class="form-control" id="GrupoGasto">
+                        <option value="">Conta</option>
+                    </select>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label for="FechaGasta">Fecha Gasta</label>
+                    <input type="date" class="form-control" id="FechaGasto" name="FechaGasto" required>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label for="monto">Monto</label>
+                    <input type="number" class="form-control" id="monto" name="monto" required>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label for="Persona">Persona</label>
+                    <select class="form-control" id="Persona">
+                        <option value="">Adrian</option>
+                    </select>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label for="Descripcion" class="control-label">Descripción</label>
+                    <textarea name="Descripcion" id="Descripcion" class="form-control" rows="5" required></textarea>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <button type="submit" class="btn btn-success" style="float: right;">
+                        Guardar
+                        <span class="fa fa-floppy-o"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

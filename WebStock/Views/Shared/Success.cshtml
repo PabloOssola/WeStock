@@ -1,0 +1,34 @@
+﻿
+@model MisFinanzas.Models.Persona
+@{
+    ViewBag.Title = "Index";
+    var model = Model;
+}
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" /> 
+    <meta charset="utf-8" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <form id="register-form" action="/Login/Login" method="post" role="form" style="display: none;" data-toggle="validator">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <br><br> <h2 style="color:#0fad00">Success</h2>
+                    <h3>@Model.UserName.ToString()</h3>
+                    <p style="font-size:20px;color:#5C5C5C;">
+                        Gracias por registrarte ya puedes ingresar con tu email @Model.Email.ToString() o tu nombre de usuario.
+                    </p>
+                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Ingresar">
+                    <br><br>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>

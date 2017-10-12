@@ -1,42 +1,113 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title</title>
     @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WeStock</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/metisMenu.min.css" rel="stylesheet">
+    <link href="~/Content/sb-admin-2.css" rel="stylesheet">
+    <link href="~/Content/morris.css" rel="stylesheet">
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
+    <div class="wrapper container">
+        <div id="wrapper">
+        <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="bottom">
+                    <a class="bottom" data-toggle="tooltip" title="Inicio" href="@Url.Action("Index", "Home")">
+                        <i class="fa fa-home fa-fw"></i>
+                    </a>
+                </li>
+                <li class="bottom">
+                    <a class="bottom" data-toggle="tooltip" title="Productos" href="@Url.Action("Index", "Productos")">
+                        <i class="fa fa-barcode fa-fw"></i>
+                    </a>
+                </li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-leanpub fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+						<li class="bottom">
+                            <a class="bottom" href="@Url.Action("Index", "Stock")">
+                                <i class="fa fa fa-database fa-fw"></i> Stock Actual
+                            </a>
+                        </li><br>
+                        <li class="bottom">
+                            <a class="bottom" href="@Url.Action("StockFuturo", "Stock")">
+                                <i class="fa fa-binoculars fa-fw"></i> Stock Futuro
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-folder-open fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li class="bottom">
+                            <a class="bottom" href="@Url.Action("Index", "Stock")">
+                                <i class="fa fa-file-powerpoint-o fa-fw"></i> Imp. Productos
+                            </a>
+                        </li><br>
+                        <li class="bottom">
+                            <a class="bottom" href="@Url.Action("StockFuturo", "Stock")">
+                                <i class="fa fa-file-excel-o fa-fw"></i> Imp. Compra/ Venta
+                            </a>
+                        </li><br>
+						<li class="bottom">
+                            <a class="bottom" href="@Url.Action("Index", "Stock")">
+                                <i class="fa fa-file-code-o fa-fw"></i> Imp. Ordenes Prov.
+                            </a>
+                        </li><br>
+                        <li class="bottom">
+                            <a class="bottom" href="@Url.Action("StockFuturo", "Stock")">
+                                <i class="fa fa-file-text-o fa-fw"></i> Imp. Ordenes Cli.
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-pie-chart fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart fa-fw"></i> Stock Minimo</a>
+                        </li><br>
+                        <li>
+                            <a href="#"><i class="fa fa-line-chart fa-fw"></i> Stock Futuro Minimo</a>
+                        </li><br>
+                        <li>
+                            <a href="#"><i class="fa fa-calendar fa-fw"></i> Vto. Ordenes Compra</a>
+                        </li>
+                    </ul>
+                </li>
+				<li class="bottom">
+                    <a class="bottom" data-toggle="tooltip" title="Salir" href="@Url.Action("Salir", "Login")">
+                        <i class="fa fa-sign-out fa-fw"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        @RenderBody()
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
+    <div class="container body-content"> 
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - WeStock</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false) 
 </body>
 </html>

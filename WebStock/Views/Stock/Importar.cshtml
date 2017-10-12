@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+  
+<div class="containter">
+    <div class="row">        
+        <div class="col-xs-12">
+            <div class="col-xs-12 col-xs-offset-2 form-group">
+                <label for="Importar">Nombre de archivo</label>
+                <input type="file" accept=".xls, .xlsx" id="NombreArchivo"/>
+            </div>                 
+            <div class="col-xs-12 form-group">
+                <button type="submit" class="btn btn-success" style="float: right;">
+                    Guardar
+                    <span class="fa fa-floppy-o"></span>
+                </button>
+            </div>
+        </div> 
+    </div>
+</div> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
+<script type="text/javascript" >
+    $(document).ready(function () {
+        $('#NombreArchivo').change(handleFile);
+    });
+
+    function handleFile(e) {
+        var files = e.target.files;
+        var result;
+        var i, f;
+        for (i = 0, f = files[i]; i != files.length; ++i) {
+            var reader = new FileReader();
+            var name = f.name;
+            reader.onload = function (e) {
+                var data = e.target.result;
+
+                /* if binary string, read with type 'binary' */
+
+                var workbook = XLSX.read(data, { type: 'binary' });
+
+                /* DO SOMETHING WITH workbook HERE */
+                workbook.SheetNames.forEach(function (sheetName) {
+                    var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+                    if (roa.length > 0) {
+                        $.ajax({
+                                url: "@Url.Action("ImportarExcel")",
+                                type: "POST",
+                                //data: JSON.stringify(roa),
+                                //contentType: "application/json; charset=utf-8",
+                                data: { model: JSON.stringify(roa) },
+                                dataType: "json",
+                                error: function (response) {
+                                    alert(response.responseText);
+                                },
+                                success: function (response) {
+                                    alert(response);
+                                }
+                        });
+                    }
+                });
+            };
+            reader.readAsArrayBuffer(f);
+        }  
+    }
+</script>
+ 
+ 
