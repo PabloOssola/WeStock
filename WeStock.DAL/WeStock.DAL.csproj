@@ -44,6 +44,13 @@
     <Compile Include="SqlServerHelper.cs" />
     <Compile Include="Interfaces\ReadDatabaseQueryResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuariosDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebStock.Entities\WeStock.Entities.csproj">
+      <Project>{5DBC5256-2309-41C2-875E-815403C28AA9}</Project>
+      <Name>WeStock.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Web;
 using System.Web.Mvc;
+using WeStock.Entities;
 using WeStock.Negocio;
 using WeStock.Negocio.InterfazHelper;
 
@@ -20,8 +22,16 @@ namespace MisFinanzas.Controllers
             try
             {
                 Usuario usuario = helper.ValidarUsuario(nombreUsuario, password);
-                if()
-                return RedirectToAction("Logueado", "Home");
+                if (usuario != null)
+                {
+                    HttpSessionStateBase session = HttpContext.Session;
+                    session["usuario"] = usuario;
+                    return RedirectToAction("Logueado", "Home", usuario);
+                }
+                else
+                {
+                    return RedirectToAction("Login");
+                }
             }
             catch (Exception e)
             {

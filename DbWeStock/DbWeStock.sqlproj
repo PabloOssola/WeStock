@@ -77,5 +77,8 @@
     <Build Include="Tablas\ImpDetalleArticulo.sql" />
     <Build Include="Tablas\ImpCliente.sql" />
     <Build Include="Tablas\ImpProveedores.sql" />
+    <Build Include="Stored Procedure\ValidarUsuario.sql" />
+    <Build Include="Stored Procedure\ValidarCreacionUsuario.sql" />
+    <Build Include="Stored Procedure\CrearUsuario.sql" />
   </ItemGroup>
 </Project>

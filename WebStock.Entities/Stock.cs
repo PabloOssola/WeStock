@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebStock.Entities
+namespace WeStock.Entities
 {
     public class Stock
     {

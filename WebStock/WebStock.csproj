@@ -243,6 +243,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebStock.Entities\WeStock.Entities.csproj">
+      <Project>{5DBC5256-2309-41C2-875E-815403C28AA9}</Project>
+      <Name>WeStock.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeStock.Negocio\WeStock.Negocio.csproj">
       <Project>{5D1414AD-6AED-489E-A3BD-EAE1DCF16527}</Project>
       <Name>WeStock.Negocio</Name>
