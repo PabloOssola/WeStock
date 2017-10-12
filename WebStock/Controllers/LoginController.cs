@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Web.Mvc;
+using WeStock.Negocio;
+using WeStock.Negocio.InterfazHelper;
 
 namespace MisFinanzas.Controllers
 {
     public class LoginController : Controller
     {
+        private ILoginHelper helper = new LoginHelper();
         // GET: Login
         public ActionResult Login()
         {
@@ -12,10 +15,12 @@ namespace MisFinanzas.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string username, string password, bool? remember)
+        public ActionResult Login(string nombreUsuario, string password, bool? remember)
         {
             try
             {
+                Usuario usuario = helper.ValidarUsuario(nombreUsuario, password);
+                if()
                 return RedirectToAction("Logueado", "Home");
             }
             catch (Exception e)
