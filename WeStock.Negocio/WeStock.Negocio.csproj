@@ -35,6 +35,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helper\LoginHelper.cs" />
     <Compile Include="InterfazHelper\ILoginHelper.cs" />
+    <Compile Include="InterfazHelper\IImportacionesHelper.cs" />
+    <Compile Include="Helper\ImportacionesHelper.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

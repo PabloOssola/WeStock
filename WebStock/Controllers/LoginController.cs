@@ -40,11 +40,18 @@ namespace MisFinanzas.Controllers
         }
 
         [HttpPost]
-        public ActionResult Registrarme(string username, string email, string password)
+        public ActionResult Registrarme(string nombreUsuario, string nombre,string email, string password)
         {
-            try
-            {
-                return View("Success");
+            Usuario usuario = new Usuario();
+            usuario.NombreUsuario = nombreUsuario;
+            usuario.Nombre = nombre;
+            usuario.Email = email;
+            usuario.Password = password;
+
+			try
+			{
+                helper.CrearUsuario(usuario);
+                return RedirectToAction("Login");
             }
             catch (Exception e)
             {

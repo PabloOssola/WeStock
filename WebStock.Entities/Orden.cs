@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WeStock.Entities
 {
@@ -22,7 +18,7 @@ namespace WeStock.Entities
 
     public enum TipoOrden
     {
-        OrdenCompraCliente = 1,
-        OrdenCompraProveedor = 2
+        OrdenCompraCliente = 'c',
+        OrdenCompraProveedor = 'p'
     }
 }
