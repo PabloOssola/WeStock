@@ -8,7 +8,7 @@ namespace WeStock.Negocio.InterfazHelper
         void ImportarClientes(List<Orden> ordenesClientes);
         void ImportarProveedores(List<Orden> ordenesProv);
         void ImportarProductos(List<Producto> productos);
-        void ImportarDetalleArticulo(List<Producto> articulos);
+        void ImportarDetalleArticulo(List<DetalleArticulo> articulos);
 
     }
 }

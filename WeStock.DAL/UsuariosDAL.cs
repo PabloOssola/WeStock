@@ -45,9 +45,11 @@ namespace WeStock.DAL
             List<SqlParameter> lstParams = new List<SqlParameter>();
             lstParams.Add(SqlServerHelper.GetParam("@nombreUsuario", nombreUsuario));
             lstParams.Add(SqlServerHelper.GetParam("@email", email));
+            SqlParameter param = SqlServerHelper.GetParamIntOuput("@existe");
+            lstParams.Add(param);
 
             SqlServerHelper.ExecuteNonQuery("dbo.ValidarCreacionUsuario", lstParams);
-            SqlParameter param = SqlServerHelper.GetParamIntOuput("@existe");
+
 
             return Convert.ToInt32(param.Value) > 0;
         }

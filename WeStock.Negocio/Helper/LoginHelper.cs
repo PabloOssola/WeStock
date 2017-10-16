@@ -13,7 +13,7 @@ namespace WeStock.Negocio
 
         public bool CrearUsuario(Usuario usuario)
         {
-            if (UsuariosDAL.ValidarCreacionUsuario(usuario.NombreUsuario, usuario.Email))
+            if (!UsuariosDAL.ValidarCreacionUsuario(usuario.NombreUsuario, usuario.Email))
             {
                 int idUsuario = UsuariosDAL.CrearUsuario(usuario.Nombre, usuario.NombreUsuario, usuario.Password, usuario.Email);
                 usuario.IdUsuario = idUsuario;

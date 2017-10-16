@@ -23,7 +23,7 @@ namespace WeStock.Negocio
 		{
             throw new NotImplementedException();
         }
-        public void ImportarDetalleArticulo(List<Producto> articulos)
+        public void ImportarDetalleArticulo(List<DetalleArticulo> articulos)
         {
             throw new NotImplementedException();
         }

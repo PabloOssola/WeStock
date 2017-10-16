@@ -3,11 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using WeStock.DAL.Interfaces;
+using System.Configuration;
 
 namespace WeStock.DAL 
 {
@@ -23,6 +19,7 @@ namespace WeStock.DAL
                 //DbDacFactory fac = (DbDacFactory)DbDacFactory.Instance;
                 //connectionString = fac.GetConnectionString();
                 //commandTimeout = fac.GetCommandTimeout();
+                connectionString = ConfigurationManager.ConnectionStrings["WeStockContext"].ConnectionString;
             }
         }
 

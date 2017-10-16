@@ -21,17 +21,18 @@ namespace MisFinanzas.Controllers
         {
             try
             {
-                Usuario usuario = helper.ValidarUsuario(nombreUsuario, password);
-                if (usuario != null)
-                {
-                    HttpSessionStateBase session = HttpContext.Session;
-                    session["usuario"] = usuario;
+                //Usuario usuario = helper.ValidarUsuario(nombreUsuario, password);
+                Usuario usuario = new Usuario();
+                //if (usuario != null)
+                //{
+                //    HttpSessionStateBase session = HttpContext.Session;
+                //    session["usuario"] = usuario;
                     return RedirectToAction("Logueado", "Home", usuario);
-                }
-                else
-                {
-                    return RedirectToAction("Login");
-                }
+                //}
+                //else
+                //{
+                //    return RedirectToAction("Login");
+                //}
             }
             catch (Exception e)
             {
