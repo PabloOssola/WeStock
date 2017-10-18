@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Stock]
 (
-	[IdStock] INT NOT NULL PRIMARY KEY,
+	[IdStock] INT NOT NULL PRIMARY KEY IDENTITY,
 	[IdProducto] INT NOT NULL,
 	[StockMinimo] INT NOT NULL,
 	[StockActual] INT NOT NULL,

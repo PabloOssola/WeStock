@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Novedades]
 (
-	[IdNovedad] INT NOT NULL PRIMARY KEY,
+	[IdNovedad] INT NOT NULL PRIMARY KEY IDENTITY,
 	[Descripcion] NVARCHAR(50) NOT NULL,
 	[IdAccion] INT NOT NULL,
 	[FechaNovedad] DATETIME NOT NULL,

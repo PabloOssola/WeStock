@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Importacion]
 (
-	[IdImportacion] INT NOT NULL PRIMARY KEY,
+	[IdImportacion] INT NOT NULL PRIMARY KEY IDENTITY,
 	[Archivo] NVARCHAR(30) NOT NULL,
 	[CantidadNuevosRegistro] INT NOT NULL,
 	[CantidadModificacionRegistros] INT NOT NULL,

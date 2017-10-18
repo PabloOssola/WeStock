@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Semanas]
 (
-	[IdSemana] INT NOT NULL PRIMARY KEY,
+	[IdSemana] INT NOT NULL PRIMARY KEY IDENTITY,
 	[Descripcion] NVARCHAR NOT NULL,
 	[FechaCierre] DATETIME NOT NULL,
 )
